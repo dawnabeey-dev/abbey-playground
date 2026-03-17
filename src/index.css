@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --color-accent: #1a365d; /* Deep Blue */
+  --color-surface: #f8f9fa;
+  --color-ink: #111111;
+  --color-grey-bg: #E8EBF2;
+  --color-highlight: #F0F2F7;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-ink font-sans antialiased selection:bg-highlight selection:text-ink;
+  }
+}
+
+.glass {
+  @apply backdrop-blur-md bg-white/70 border-b border-black/5;
+}
+
+.password-input {
+  @apply bg-transparent border-b border-white/20 text-white text-center text-2xl py-4 outline-none transition-all focus:border-white/60 w-full max-w-xs;
+}
+
+.portfolio-card {
+  @apply relative overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2;
+}
+
+.portfolio-image {
+  @apply w-full aspect-[4/3] object-cover transition-transform duration-700 hover:scale-105;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
